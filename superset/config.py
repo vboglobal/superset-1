@@ -169,7 +169,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 # Your App secret key. Make sure you override it on superset_config.py.
 # Use a strong complex alphanumeric string and use a tool to help you generate
 # a sufficiently random sequence, ex: openssl rand -base64 42"
-SECRET_KEY = CHANGE_ME_SECRET_KEY
+SECRET_KEY = "7uNP4gbuUsAkNQD8WPV2ElFihX/w+RczmziDE6wWQmEhQS34L5ioir1T"
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(DATA_DIR, "superset.db")
@@ -371,8 +371,8 @@ DEFAULT_FEATURE_FLAGS: Dict[str, bool] = {
     # make GET request to explore_json. explore_json accepts both GET and POST request.
     # See `PR 7935 <https://github.com/apache/superset/pull/7935>`_ for more details.
     "ENABLE_EXPLORE_JSON_CSRF_PROTECTION": False,
-    "ENABLE_TEMPLATE_PROCESSING": False,
-    "ENABLE_TEMPLATE_REMOVE_FILTERS": False,
+    "ENABLE_TEMPLATE_PROCESSING": True,
+    "ENABLE_TEMPLATE_REMOVE_FILTERS": True,
     "KV_STORE": False,
     # When this feature is enabled, nested types in Presto will be
     # expanded into extra columns and/or arrays. This is experimental,
@@ -396,11 +396,11 @@ DEFAULT_FEATURE_FLAGS: Dict[str, bool] = {
     # When True, this escapes HTML (rather than rendering it) in Markdown components
     "ESCAPE_MARKDOWN_HTML": False,
     "DASHBOARD_NATIVE_FILTERS": True,
-    "DASHBOARD_CROSS_FILTERS": False,
+    "DASHBOARD_CROSS_FILTERS": True,
     # Feature is under active development and breaking changes are expected
-    "DASHBOARD_NATIVE_FILTERS_SET": False,
-    "DASHBOARD_FILTERS_EXPERIMENTAL": False,
-    "GLOBAL_ASYNC_QUERIES": False,
+    "DASHBOARD_NATIVE_FILTERS_SET": True,
+    "DASHBOARD_FILTERS_EXPERIMENTAL": True,
+    "GLOBAL_ASYNC_QUERIES": True,
     "VERSIONED_EXPORT": False,
     # Note that: RowLevelSecurityFilter is only given by default to the Admin role
     # and the Admin Role does have the all_datasources security permission.
@@ -416,7 +416,7 @@ DEFAULT_FEATURE_FLAGS: Dict[str, bool] = {
     # Enable experimental feature to search for other dashboards
     "OMNIBAR": False,
     "DASHBOARD_RBAC": False,
-    "ENABLE_EXPLORE_DRAG_AND_DROP": False,
+    "ENABLE_EXPLORE_DRAG_AND_DROP": True,
     "ENABLE_FILTER_BOX_MIGRATION": False,
     "ENABLE_DND_WITH_CLICK_UX": False,
     # Enabling ALERTS_ATTACH_REPORTS, the system sends email and slack message
@@ -433,7 +433,7 @@ DEFAULT_FEATURE_FLAGS: Dict[str, bool] = {
     "ENFORCE_DB_ENCRYPTION_UI": False,
     # Allow users to export full CSV of table viz type.
     # This could cause the server to run out of memory or compute.
-    "ALLOW_FULL_CSV_EXPORT": False,
+    "ALLOW_FULL_CSV_EXPORT": True,
     "UX_BETA": False,
     "GENERIC_CHART_AXES": False,
 }
